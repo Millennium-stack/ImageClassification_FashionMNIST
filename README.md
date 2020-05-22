@@ -27,6 +27,8 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 
 
 Before processing, we need to pre-process the data.
 
+![](images/prediction_1.png)
+
 If we inspect the 1st image in the training set, the image pixel values fall in the range of 2 to 255.
 We scale these values to range of 0 to 1 before feeding to the neural network model.
 For this we divide the values by 255.0.
@@ -39,6 +41,8 @@ It extracts representations from the data fed into them and we hope these repres
 
 Most of the deep  learning consist of chaining together simple layers.
 Most layers like the tf.keras.layers.dense have parameters that are learned during the training.
+
+![](images/prediction_2.png)
 
 model = keras.Sequential([
                           keras.layers.Flatten(input_shape=(28, 28)),
@@ -119,10 +123,17 @@ Now we graph it further to look at the full set of 10 channels.
 
 Now we look at the several image predictions individually and the prediction array.
 
+![](images/prediction_3.png)
+
+![](images/prediction_4.png)
+
 Now we plot the several images with the prediction: - 
 1. The correct prediction labels are green
 2. The incorrect ones are red
 3. We get the number as correct % out of 100 for the predicted label and it can be wrong
+
+![](images/prediction_5.png)
+
 
 For example, in our dataset, the sneaker is classified as a sandal however it is identified as 96% sandal which is incorrect.
 
@@ -142,6 +153,8 @@ Now, we grab the predictions for our only image in the batch
 
 plot_value_array(0, predictions_single, test_labels)
 _=plt.xticks(range(10), class_names, rotation=45)
+
+![](images/prediction_6.png)
 
 We find that the model projects a label of 9 which is the ankle boot.
 
